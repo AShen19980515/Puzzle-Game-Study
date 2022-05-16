@@ -38,15 +38,16 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\Transition\TransitionManager.cs" />
      <Compile Include="Assets\Scripts\Cursor\CursorManager.cs" />
-     <Compile Include="Assets\Scripts\Transition\Teleport.cs" />
-     <Compile Include="Assets\Scripts\Singleton.cs" />
-     <Compile Include="Assets\Scripts\Inventory\Logic\Item.cs" />
-     <Compile Include="Assets\Scripts\Inventory\Logic\InventoryManager.cs" />
-     <Compile Include="Assets\Scripts\ItemEnum.cs" />
-     <Compile Include="Assets\Scripts\Inventory\Data\ItemDataList_SO.cs" />
-     <Compile Include="Assets\Scripts\Inventory\UI\InventoryUI.cs" />
      <Compile Include="Assets\Scripts\Inventory\UI\SlotUI.cs" />
+     <Compile Include="Assets\Scripts\Transition\Teleport.cs" />
+     <Compile Include="Assets\Scripts\Inventory\Logic\Item.cs" />
+     <Compile Include="Assets\Scripts\Inventory\Data\ItemDataList_SO.cs" />
+     <Compile Include="Assets\Scripts\Singleton.cs" />
      <Compile Include="Assets\Scripts\EventHandler.cs" />
+     <Compile Include="Assets\Scripts\Inventory\Logic\InventoryManager.cs" />
+     <Compile Include="Assets\Scripts\Inventory\UI\InventoryUI.cs" />
+     <Compile Include="Assets\Scripts\ItemEnum.cs" />
+     <Compile Include="Assets\Scripts\Manager\DataManager.cs" />
      <None Include="Assets\Art\SceneArt\H4\介绍.txt" />
      <None Include="Assets\Art\SceneArt\H2\介绍.txt" />
      <None Include="Assets\Art\SceneArt\H2A\介绍.txt" />

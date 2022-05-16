@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
-    public ItemName itemName; 
-    
+    public ItemName itemName;
+
     public void ItemClicked()
     {
         this.gameObject.SetActive(false);

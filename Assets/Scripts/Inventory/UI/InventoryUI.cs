@@ -34,6 +34,37 @@ public class InventoryUI : MonoBehaviour
             slotUI.setItem(itemDetails);
             itemtitle.SetActive(true);
             text.text=itemDetails.itemtitle;
+            if(itemIndex==0 && InventoryManager.Single.itemcount()>1){
+                leftButton.interactable=false;
+                rightButton.interactable=true;
+            }
+            else if(itemIndex==InventoryManager.Single.itemcount()-1 && itemIndex!=0)
+            {
+                leftButton.interactable=true;
+                rightButton.interactable=false;
+            }
+            else if(InventoryManager.Single.itemcount()>1){
+                leftButton.interactable=true;
+                rightButton.interactable=true;
+            }
+        }
+    }
+
+    public void leftButtonClick()
+    {
+        ItemDetails item=null;
+        if(itemIndex>0)
+        {
+         EventHandler.CallUpdateUIEvent(InventoryManager.Single.findItem(--itemIndex),itemIndex);
+        }
+    }
+
+    public void rightButtonClick()
+    {
+        ItemDetails item=null;
+        if(itemIndex<InventoryManager.Single.itemcount()-1)
+        {
+         EventHandler.CallUpdateUIEvent(InventoryManager.Single.findItem(++itemIndex),itemIndex);
         }
     }
 }

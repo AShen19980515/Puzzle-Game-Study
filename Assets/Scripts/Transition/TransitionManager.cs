@@ -5,9 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class TransitionManager : Singleton<TransitionManager>
 {
+    public string startScene="H1";
     public CanvasGroup fadecanvas;
     public float fadeDuration=2;
     bool isfade=false;
+    private void Start() {
+        StartCoroutine(TransitionToScene(string.Empty,startScene)); 
+    }
     
     public void Transition(string from,string to)
     {
@@ -17,12 +21,18 @@ public class TransitionManager : Singleton<TransitionManager>
 
     IEnumerator TransitionToScene(string from,string to)
     {
+        if(from != string.Empty)
+        {
         yield return Fade(1);
+        EventHandler.CallBeforeSceneUnloadEvent();
         yield return SceneManager.UnloadSceneAsync(from);
+        }
         yield return SceneManager.LoadSceneAsync(to,LoadSceneMode.Additive);
 
         Scene newScene=SceneManager.GetSceneAt(SceneManager.sceneCount-1);
         SceneManager.SetActiveScene(newScene);
+
+        EventHandler.CallAfterSceneLoadEvent();
         yield return Fade(0);
     }
 
@@ -32,10 +42,9 @@ public class TransitionManager : Singleton<TransitionManager>
 /// <param name="targetAlpha">1是黑，0是透明</param>
 /// <returns></returns>
     IEnumerator Fade(float targetAlpha)
-    {
+    { 
         isfade=true;
         fadecanvas.blocksRaycasts=true;
-        Debug.Log("开始fade");
         float speed=Mathf.Abs(fadecanvas.alpha-targetAlpha)/fadeDuration;
         while(!Mathf.Approximately(fadecanvas.alpha,targetAlpha)){
             fadecanvas.alpha=Mathf.MoveTowards(fadecanvas.alpha,targetAlpha,speed*Time.deltaTime);
