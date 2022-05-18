@@ -21,6 +21,11 @@ public class InventoryManager : Singleton<InventoryManager>
     {
         return itemData.GetItemDetail(itemList[index]);
     }
+
+    public ItemDetails findItemByName(ItemName itemName)
+    {
+        return itemData.GetItemDetail(itemName);
+    }
     
     public int itemcount()
     {

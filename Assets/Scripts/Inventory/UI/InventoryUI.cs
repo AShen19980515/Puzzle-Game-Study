@@ -32,8 +32,8 @@ public class InventoryUI : MonoBehaviour
         }else{
             itemIndex=index;
             slotUI.setItem(itemDetails);
-            itemtitle.SetActive(true);
-            text.text=itemDetails.itemtitle;
+            //itemtitle.SetActive(true);
+            //text.text=itemDetails.itemtitle;
             if(itemIndex==0 && InventoryManager.Single.itemcount()>1){
                 leftButton.interactable=false;
                 rightButton.interactable=true;
