@@ -14,6 +14,7 @@ public class Interactive : MonoBehaviour
         {
             isDone = true;
             OnClickedAction();
+            EventHandler.CallItemUsedEvent(itemName);
         }
     }
 /// <summary>

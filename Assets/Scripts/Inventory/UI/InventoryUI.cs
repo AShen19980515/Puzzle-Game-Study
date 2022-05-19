@@ -25,18 +25,22 @@ public class InventoryUI : MonoBehaviour
         {
             itemIndex=-1;
             slotUI.setEmpty();
-            itemtitle.SetActive(false);
-            text.text="";
+
             leftButton.interactable=false;
             rightButton.interactable=false;
         }else{
             itemIndex=index;
             slotUI.setItem(itemDetails);
-            //itemtitle.SetActive(true);
-            //text.text=itemDetails.itemtitle;
-            if(itemIndex==0 && InventoryManager.Single.itemcount()>1){
-                leftButton.interactable=false;
-                rightButton.interactable=true;
+
+            //物品按钮UI逻辑
+            if(itemIndex==0){
+                if(InventoryManager.Single.itemcount()>1){
+                   leftButton.interactable=false;
+                   rightButton.interactable=true;
+                }else{
+                    leftButton.interactable=false;
+                    rightButton.interactable=false;
+                }
             }
             else if(itemIndex==InventoryManager.Single.itemcount()-1 && itemIndex!=0)
             {

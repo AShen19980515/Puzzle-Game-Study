@@ -15,15 +15,16 @@ public class CursorManager : MonoBehaviour
 
     private void OnEnable() {
         EventHandler.ItemSelectedEvent += OnItemSelectedEvent;
+        EventHandler.ItemUsedEvent += OnItemUsedEvent;
     }
 
     private void OnDisable() {
         EventHandler.ItemSelectedEvent -= OnItemSelectedEvent;
+        EventHandler.ItemUsedEvent -= OnItemUsedEvent;
     }
 
     private void OnItemSelectedEvent(ItemDetails itemDetails, bool isSelected)
     {
-        Debug.Log("选取了");
         holdItem = isSelected;
         if(isSelected)
         {
@@ -70,5 +71,11 @@ public class CursorManager : MonoBehaviour
     private Collider2D ObjectAtMousePosition()
     {
         return Physics2D.OverlapPoint(mouseWorldPos);
+    }
+    private void OnItemUsedEvent(ItemName itemName)
+    {
+        currentItem = ItemName.None;
+        holdItem = false;
+        hand.gameObject.SetActive(false);
     }
 }

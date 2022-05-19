@@ -24,12 +24,6 @@ public class SlotUI : MonoBehaviour,IPointerClickHandler,IPointerEnterHandler,IP
         this.gameObject.SetActive(false);
     }
 
-    public void OnPointerClick(PointerEventData eventData)
-    {
-        isSelected=!isSelected;
-        EventHandler.CallItemSelectedEvent(item,isSelected);
-    }
-
     public void OnPointerEnter(PointerEventData eventData)
     {
         if(this.gameObject.activeInHierarchy)
@@ -42,5 +36,11 @@ public class SlotUI : MonoBehaviour,IPointerClickHandler,IPointerEnterHandler,IP
     public void OnPointerExit(PointerEventData eventData)
     {
         itemtitle.gameObject.SetActive(false);
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    { 
+        isSelected=!isSelected;
+        EventHandler.CallItemSelectedEvent(item,isSelected);
     }
 }
