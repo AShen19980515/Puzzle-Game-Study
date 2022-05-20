@@ -4,12 +4,16 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class SlotUI : MonoBehaviour,IPointerClickHandler,IPointerEnterHandler,IPointerExitHandler
+public class SlotUI : MonoBehaviour,IPointerClickHandler
 {
     public Image itemImage;
     public ItemTitle itemtitle;
     ItemDetails item;
     private bool isSelected;
+    RectTransform rect;
+    private void Awake() {
+        rect=this.gameObject.GetComponent<RectTransform>();
+    }
 
     public void setItem(ItemDetails item)
     {
@@ -24,23 +28,20 @@ public class SlotUI : MonoBehaviour,IPointerClickHandler,IPointerEnterHandler,IP
         this.gameObject.SetActive(false);
     }
 
-    public void OnPointerEnter(PointerEventData eventData)
-    {
-        if(this.gameObject.activeInHierarchy)
-        {
-            itemtitle.gameObject.SetActive(true);
-            itemtitle.UpdateItemName(item.itemName);
-        }
-    }
-
-    public void OnPointerExit(PointerEventData eventData)
-    {
-        itemtitle.gameObject.SetActive(false);
-    }
-
     public void OnPointerClick(PointerEventData eventData)
     { 
         isSelected=!isSelected;
         EventHandler.CallItemSelectedEvent(item,isSelected);
+
+        if(isSelected)
+        {
+            rect.localScale=new Vector3(1.1f,1.1f,1.1f);
+            itemtitle.gameObject.SetActive(true);
+            itemtitle.UpdateItemName(item.itemName);
+        }else
+        {
+            rect.localScale=new Vector3(1.0f,1.0f,1.0f);
+            itemtitle.gameObject.SetActive(false);
+        }
     }
 }

@@ -30,16 +30,16 @@ public class CursorManager : MonoBehaviour
         {
             currentItem = itemDetails.itemName;
         }
-        hand.gameObject.SetActive(holdItem);
+        //hand.gameObject.SetActive(holdItem);
     }
 
     private void Update() {
         canclick=ObjectAtMousePosition();
 
-        if(hand.gameObject.activeInHierarchy)
-        {
-            hand.position=Input.mousePosition;
-        }
+        // if(hand.gameObject.activeInHierarchy)
+        // {
+        //     hand.position=Input.mousePosition;
+        // }
         if(canclick && Input.GetMouseButtonDown(0))
         {
             ClickAction(ObjectAtMousePosition().gameObject);
