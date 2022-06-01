@@ -484,6 +484,7 @@ GameObject:
   - component: {fileID: 1885257710}
   - component: {fileID: 1885257709}
   - component: {fileID: 1885257708}
+  - component: {fileID: 1885257711}
   m_Layer: 0
   m_Name: Character
   m_TagString: Interactive
@@ -500,7 +501,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1885257707}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b3ee6ea40ab0d1408c4f8ee9b7d55fa, type: 3}
+  m_Script: {fileID: 11500000, guid: 0b29679f3d1d21a43acb4f5beb36607a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   requireItem: 2
@@ -545,6 +546,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1885257711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1885257707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e7da9e6d20ebd141a66a70ffaf6b698, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueEmpty: {fileID: 11400000, guid: 8318296f2d6781641b8f027d9ad0e4f5, type: 2}
+  dialogueFinish: {fileID: 11400000, guid: a3db173fa7d98ac4eb96f5e25ab3cdfc, type: 2}
 --- !u!1 &1993331001
 GameObject:
   m_ObjectHideFlags: 0

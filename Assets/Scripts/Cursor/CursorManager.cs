@@ -13,6 +13,8 @@ public class CursorManager : MonoBehaviour
 
     private bool holdItem;
 
+    public ItemTitle itemTitle;
+
     private void OnEnable() {
         EventHandler.ItemSelectedEvent += OnItemSelectedEvent;
         EventHandler.ItemUsedEvent += OnItemUsedEvent;
@@ -77,5 +79,6 @@ public class CursorManager : MonoBehaviour
         currentItem = ItemName.None;
         holdItem = false;
         hand.gameObject.SetActive(false);
+        itemTitle.gameObject.SetActive(false);
     }
 }

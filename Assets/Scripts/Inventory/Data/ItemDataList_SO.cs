@@ -17,4 +17,6 @@ public class ItemDetails
     public ItemName itemName;
     public Sprite itemSprite;
     public string itemtitle;
+
+    public Sprite itemContent; 
 }

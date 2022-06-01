@@ -9,11 +9,6 @@ public class ItemTitle : MonoBehaviour
 
     public void UpdateItemName(ItemName itemName)
     {
-        itemTitle.text=itemName switch
-        {
-            ItemName.key => InventoryManager.Single.findItemByName(itemName).itemtitle,
-            ItemName.ticket=>InventoryManager.Single.findItemByName(itemName).itemtitle,
-            _=>""
-        };
+        itemTitle.text=InventoryManager.Single.findItemByName(itemName).itemtitle;
     }
 }
