@@ -25,7 +25,6 @@
 -a="D:\Document\Puzzle-Game-Study-git\Library\PackageCache\com.unity.analytics@3.6.12\Unity.Analytics.Tracker.dll"
 -s="D:\Software\2020.3.34f1c2\Editor\Data\Managed\UnityEngine"
 -s="D:\Document\Puzzle-Game-Study-git\Library\PlayerScriptAssemblies"
--s="D:\Document\Puzzle-Game-Study-git\Assets\M Studio\Plugins"
 -s="D:\Document\Puzzle-Game-Study-git\Library\PackageCache\com.unity.ext.nunit@1.0.6\net35\unity-custom"
 -s="D:\Document\Puzzle-Game-Study-git\Library\PackageCache\com.unity.analytics@3.6.12\AnalyticsStandardEvents"
 -s="D:\Document\Puzzle-Game-Study-git\Library\PackageCache\com.unity.analytics@3.6.12"

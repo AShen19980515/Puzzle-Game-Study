@@ -15,6 +15,23 @@ public class SlotUI : MonoBehaviour,IPointerClickHandler
     private void Awake() {
         rect=this.gameObject.GetComponent<RectTransform>();
     }
+    private void OnEnable() {
+        EventHandler.ItemUsedEvent += OnItemUsedEvent;
+    }
+    private void OnDisable() {
+        EventHandler.ItemUsedEvent -= OnItemUsedEvent;
+    }
+
+    private void OnItemUsedEvent(ItemName obj)
+    {
+        isSelected=!isSelected;
+        rect.localScale=new Vector3(1.0f,1.0f,1.0f);
+        itemtitle.gameObject.SetActive(false);
+
+        if(item.itemContent){
+            itemcontent.gameObject.SetActive(false);
+        }
+    }
 
     public void setItem(ItemDetails item)
     {

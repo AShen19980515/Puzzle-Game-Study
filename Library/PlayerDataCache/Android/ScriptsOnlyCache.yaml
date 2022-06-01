@@ -1,22 +1,25 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - CameraManager
     - CursorManager
     - DataManager
-    - Interactive
+    - DialogController
+    - DialogueData_SO
+    - DialogueUI
     - InventoryManager
     - InventoryUI
     - Item
     - ItemDataList_SO
     - ItemTitle
+    - Oldwoman
     - SlotUI
     - Teleport
     - TransitionManager
+    - drawingBoard
     - mailBox
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridPaintingState
-    - UnityEditor.Tilemaps.GridPaletteBrushes
-    - UnityEditor.Tilemaps.GridPalettes
     - UnityEditor.Tilemaps.SceneViewGridManager
     - UnityEditor.Tilemaps.SceneViewOpenTilePaletteHelper
     - UnityEditor.Tilemaps.TileDragAndDropManager
@@ -38,9 +41,12 @@ ScriptsOnlyBuild:
     - UnityEngine.EventSystems.StandaloneInputModule
     - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
+    - UnityEngine.UI.ContentSizeFitter
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
+    - UnityEngine.UI.LayoutElement
     - UnityEngine.UI.Text
+    - UnityEngine.UI.VerticalLayoutGroup
   sceneClasses:
     Assets/Scenes/H1.unity:
     - Class: 1
@@ -53,14 +59,18 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
+    - Class: 60
+      Script: {instanceID: 0}
     - Class: 61
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 2626}
+      Script: {instanceID: 2630}
     - Class: 114
-      Script: {instanceID: 4044}
+      Script: {instanceID: 4054}
+    - Class: 114
+      Script: {instanceID: 5826}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -89,11 +99,15 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 2626}
+      Script: {instanceID: 1900}
     - Class: 114
-      Script: {instanceID: 3104}
+      Script: {instanceID: 2574}
     - Class: 114
-      Script: {instanceID: 4044}
+      Script: {instanceID: 2630}
+    - Class: 114
+      Script: {instanceID: 3986}
+    - Class: 114
+      Script: {instanceID: 4054}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -117,7 +131,13 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
+    - Class: 61
+      Script: {instanceID: 0}
     - Class: 104
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 2630}
+    - Class: 115
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
@@ -143,11 +163,11 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 2626}
+      Script: {instanceID: 2630}
     - Class: 114
-      Script: {instanceID: 4044}
+      Script: {instanceID: 4054}
     - Class: 114
-      Script: {instanceID: 4474}
+      Script: {instanceID: 4484}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -180,33 +200,43 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1520}
     - Class: 114
+      Script: {instanceID: 1712}
+    - Class: 114
       Script: {instanceID: 1830}
     - Class: 114
-      Script: {instanceID: 2088}
+      Script: {instanceID: 2090}
     - Class: 114
-      Script: {instanceID: 2258}
+      Script: {instanceID: 2260}
     - Class: 114
-      Script: {instanceID: 2314}
+      Script: {instanceID: 2316}
     - Class: 114
-      Script: {instanceID: 2736}
+      Script: {instanceID: 2740}
     - Class: 114
-      Script: {instanceID: 2814}
+      Script: {instanceID: 2818}
     - Class: 114
-      Script: {instanceID: 2900}
+      Script: {instanceID: 2904}
     - Class: 114
-      Script: {instanceID: 3156}
+      Script: {instanceID: 3160}
     - Class: 114
-      Script: {instanceID: 3398}
+      Script: {instanceID: 3402}
     - Class: 114
-      Script: {instanceID: 3522}
+      Script: {instanceID: 3526}
     - Class: 114
-      Script: {instanceID: 4228}
+      Script: {instanceID: 3560}
     - Class: 114
-      Script: {instanceID: 4802}
+      Script: {instanceID: 3748}
     - Class: 114
-      Script: {instanceID: 4920}
+      Script: {instanceID: 3914}
     - Class: 114
-      Script: {instanceID: 5104}
+      Script: {instanceID: 4002}
+    - Class: 114
+      Script: {instanceID: 4238}
+    - Class: 114
+      Script: {instanceID: 4812}
+    - Class: 114
+      Script: {instanceID: 4930}
+    - Class: 114
+      Script: {instanceID: 5114}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -320,7 +350,13 @@ ScriptsOnlyBuild:
     className: TMP_FontAsset
   - hash:
       serializedVersion: 2
-      Hash: d2714ed29c4ddffb3c7ed4e2d11a1027
+      Hash: bc29021dcc84706bb2502cdcbc8af831
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Oldwoman
+  - hash:
+      serializedVersion: 2
+      Hash: 6ab84c654dcdd6b3e509d338a34ae5fd
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CursorManager
@@ -344,7 +380,7 @@ ScriptsOnlyBuild:
     className: GroupTrack
   - hash:
       serializedVersion: 2
-      Hash: f86ee434115045b231f470562a0bc06c
+      Hash: 41af509ca3a71e4755c2a15d1976ab07
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SlotUI
@@ -378,6 +414,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: RawImage
+  - hash:
+      serializedVersion: 2
+      Hash: 704abe0414449ef256bfeac7851404cd
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: DialogController
   - hash:
       serializedVersion: 2
       Hash: 7c0caa89cfdab5f4463f003c6973b230
@@ -542,6 +584,12 @@ ScriptsOnlyBuild:
     className: ToggleGroup
   - hash:
       serializedVersion: 2
+      Hash: 2b7032a6d143a68eb14d178092c265e3
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CameraManager
+  - hash:
+      serializedVersion: 2
       Hash: 4fd8bf02e3089425d3502e26c44ba31a
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -602,10 +650,22 @@ ScriptsOnlyBuild:
     className: BaseInput
   - hash:
       serializedVersion: 2
+      Hash: d7505105843d5e699362c42b43e6d263
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: DialogueData_SO
+  - hash:
+      serializedVersion: 2
       Hash: 88e2c6f501bf5dead831a3e44c30de40
     assemblyName: UnityEngine.Advertisements.dll
     namespaceName: UnityEngine.Advertisements.Platform.Editor
     className: BannerPlaceholder
+  - hash:
+      serializedVersion: 2
+      Hash: 916dd0db1e1d841aa6efad9d51fe5c3b
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: DialogueUI
   - hash:
       serializedVersion: 2
       Hash: 9067ad41c64ab4fe1020b4dccc098354
@@ -650,7 +710,7 @@ ScriptsOnlyBuild:
     className: AudioPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: df60447f6251d4fa14b9a8dad41d9d5d
+      Hash: a6190e8899d7c2224e5d3d80738920e2
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ItemDataList_SO
@@ -828,6 +888,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
     className: TouchInputModule
+  - hash:
+      serializedVersion: 2
+      Hash: dbcf58cc57e23eb6899c64f066fe71ba
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: drawingBoard
   platform: 13
   scenePathNames:
   - Assets/Scenes/Persistent.unity
