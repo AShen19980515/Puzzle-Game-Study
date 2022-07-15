@@ -37,12 +37,17 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Transition\TransitionManager.cs" />
+     <Compile Include="Assets\Scripts\Manager\GameManager.cs" />
+     <Compile Include="Assets\Scripts\Interactive\Oldwoman.cs" />
      <Compile Include="Assets\Scripts\Cursor\CursorManager.cs" />
      <Compile Include="Assets\Scripts\Inventory\UI\SlotUI.cs" />
+     <Compile Include="Assets\Scripts\Dialogue\Logic\DialogController.cs" />
      <Compile Include="Assets\Scripts\Transition\Teleport.cs" />
      <Compile Include="Assets\Scripts\Manager\DataManager.cs" />
      <Compile Include="Assets\Scripts\Interactive\Interactive.cs" />
      <Compile Include="Assets\Scripts\Manager\CameraManager.cs" />
+     <Compile Include="Assets\Scripts\Dialogue\Data\DialogueData_SO.cs" />
+     <Compile Include="Assets\Scripts\Dialogue\UI\DialogueUI.cs" />
      <Compile Include="Assets\Scripts\Inventory\Logic\Item.cs" />
      <Compile Include="Assets\Scripts\Inventory\Data\ItemDataList_SO.cs" />
      <Compile Include="Assets\Scripts\Singleton.cs" />
@@ -50,13 +55,13 @@
      <Compile Include="Assets\Scripts\EventHandler.cs" />
      <Compile Include="Assets\Scripts\Inventory\Logic\InventoryManager.cs" />
      <Compile Include="Assets\Scripts\Inventory\UI\ItemTitle.cs" />
+     <Compile Include="Assets\Scripts\MiniGame\Holder.cs" />
      <Compile Include="Assets\Scripts\Inventory\UI\InventoryUI.cs" />
      <Compile Include="Assets\Scripts\ItemEnum.cs" />
      <Compile Include="Assets\Scripts\Interactive\drawingBoard.cs" />
-     <Compile Include="Assets\Scripts\Dialogue\Data\DialogueData_SO.cs" />
-     <Compile Include="Assets\Scripts\Dialogue\Logic\DialogController.cs" />
-     <Compile Include="Assets\Scripts\Interactive\Oldwoman.cs" />
-     <Compile Include="Assets\Scripts\Dialogue\UI\DialogueUI.cs" />
+     <Compile Include="Assets\Scripts\MiniGame\DataH2A_SO.cs" />
+     <Compile Include="Assets\Scripts\MiniGame\GameController.cs" />
+     <Compile Include="Assets\Scripts\MiniGame\Ball.cs" />
      <None Include="Assets\Art\SceneArt\H4\介绍.txt" />
      <None Include="Assets\Art\SceneArt\H2\介绍.txt" />
      <None Include="Assets\Art\SceneArt\H2A\介绍.txt" />

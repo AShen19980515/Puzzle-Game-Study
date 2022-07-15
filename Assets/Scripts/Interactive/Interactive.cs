@@ -24,7 +24,7 @@ public class Interactive : MonoBehaviour
     {
         Debug.Log("正确物品");
     }
-
+    
     public virtual void EmptyClicked()
     {
         Debug.Log("空点");

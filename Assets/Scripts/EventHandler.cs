@@ -53,4 +53,11 @@ public static class EventHandler
     {
         GameStatusChangeEvent?.Invoke(status);
     }
+
+    public static event Action MiniGameStateEvent;
+    
+    public static void CallMiniGameStateEvent()
+    {
+        MiniGameStateEvent?.Invoke();
+    }
 }

@@ -5,12 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class TransitionManager : Singleton<TransitionManager>
 {
+    #region 变量
     public string startScene="H1";
     public CanvasGroup fadecanvas;
     public float fadeDuration=2;
     bool isfade=false;
     bool canTransition=true;
-
+    #endregion
     private void OnEnable() {
         EventHandler.GameStatusChangeEvent += OnCallGameStatusChangeEvent;
     }
