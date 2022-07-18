@@ -4,8 +4,33 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public Dictionary<string,bool> miniGameStateDict= new Dictionary<string,bool>();
+    private void OnEnable() {
+        EventHandler.AfterSceneLoadEvent += OnAfterSceneLoadEvent;
+        EventHandler.MiniGamePassEvent += OnMiniGamePassEvent;
+
+    }
+    private void OnDisable() {
+        EventHandler.AfterSceneLoadEvent -= OnAfterSceneLoadEvent;
+        EventHandler.MiniGamePassEvent -= OnMiniGamePassEvent;
+        
+    }
     void Start()
     {
        EventHandler.CallGameStatusChangeEvent(GameStatus.GamePlay);
+    }
+
+    void OnAfterSceneLoadEvent(){
+        foreach(var miniGame in FindObjectsOfType<MiniGame>()){
+            if(miniGameStateDict.TryGetValue(miniGame.gameName,out bool isPass)){
+                miniGame.isPass = isPass;
+                miniGame.UpdateMiniGameState();
+            }
+        }
+    }
+
+    void OnMiniGamePassEvent(string gameName){
+        Debug.Log("minigamepass");
+        this.miniGameStateDict[gameName] = true;
     }
 }

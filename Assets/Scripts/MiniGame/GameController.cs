@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class GameController : MonoBehaviour
+public class GameController : Singleton<GameController>
 {
     public UnityEvent OnFinsh;
 
@@ -65,6 +65,24 @@ public class GameController : MonoBehaviour
             if(!ball.isMatch)return;
         }
         Debug.Log("游戏结束");
+        foreach(var holder in holderTransforms){
+            holder.GetComponent<Collider2D>().enabled = false;
+        }
         OnFinsh?.Invoke();
+
+        EventHandler.CallMiniGamePassEvent("H2A");
+    }
+
+    public void ResetGame(){
+        for(int i=0;i < lineParent.transform.childCount;i++){
+            Destroy(lineParent.transform.GetChild(i).gameObject);
+        }
+        foreach(var holder in holderTransforms){
+            if(holder.childCount > 0){
+                Destroy(holder.GetChild(0).gameObject);
+            }
+        }
+        DrawLines();
+        CreateBall();
     }
 }

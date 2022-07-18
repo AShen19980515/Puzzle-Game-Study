@@ -60,4 +60,10 @@ public static class EventHandler
     {
         MiniGameStateEvent?.Invoke();
     }
+
+    public static event Action<string> MiniGamePassEvent;
+    public static void CallMiniGamePassEvent(string gameName)
+    {
+        MiniGamePassEvent?.Invoke(gameName);
+    }
 }

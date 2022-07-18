@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+
 
 public class CursorManager : MonoBehaviour
 {
@@ -40,6 +42,9 @@ public class CursorManager : MonoBehaviour
         // {
         //     hand.position=Input.mousePosition;
         // }
+        if(InteractivewithUI()){
+            return ;
+        }
         if(canclick && Input.GetMouseButtonDown(0))
         {
             ClickAction(ObjectAtMousePosition().gameObject);
@@ -78,4 +83,12 @@ public class CursorManager : MonoBehaviour
         holdItem = false;
         hand.gameObject.SetActive(false);
     }
+
+    bool InteractivewithUI(){
+        if(EventSystem.current != null && EventSystem.current.IsPointerOverGameObject()){
+            return true;
+        }
+        return false;
+    }
+
 }
