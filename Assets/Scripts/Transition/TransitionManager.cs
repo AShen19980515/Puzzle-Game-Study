@@ -63,7 +63,7 @@ public class TransitionManager : Singleton<TransitionManager>
         fadecanvas.blocksRaycasts=true;
         float speed=Mathf.Abs(fadecanvas.alpha-targetAlpha)/fadeDuration;
         while(!Mathf.Approximately(fadecanvas.alpha,targetAlpha)){
-            fadecanvas.alpha=Mathf.MoveTowards(fadecanvas.alpha,targetAlpha,speed*Time.deltaTime);
+            fadecanvas.alpha=Mathf.MoveTowards(fadecanvas.alpha,targetAlpha,speed*Time.deltaTime*2);
             yield return null;
         }
 
